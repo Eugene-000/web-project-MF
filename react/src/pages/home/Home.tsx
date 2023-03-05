@@ -1,7 +1,10 @@
 import React from 'react'
+import { Header } from '../../components/header/Header'
 
 export const Home: React.FC = () => {
   return (
-    <div>Home</div>
+    <>
+      <Header banner={true}/>
+    </>
   )
 }

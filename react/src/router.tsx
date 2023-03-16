@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { PATH_CART, PATH_CATALOG, PATH_HOME, PATH_LOGIN, PATH_NOT_FOUND, PATH_PROFILE, PATH_SIGN_UP } from "./constants/routes";
-import { Cart, Catalog, Home, Login, Profile, SignUp } from "./pages";
-import { NotFound } from "./pages/notFound";
+import { PATH_ABOUT, PATH_CART, PATH_CATALOG, PATH_HOME, PATH_LOGIN, PATH_NOT_FOUND, PATH_PRODUCT, PATH_PROFILE, PATH_SIGN_UP } from "./constants/routes";
+import { Cart, Catalog, Home, Login, Profile, SignUp, About, NotFound, Product } from "./pages";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +26,14 @@ export const router = createBrowserRouter([
     {
         path: PATH_CART,
         element: <Cart />
+    },
+    {
+        path: PATH_PRODUCT,
+        element: <Product />
+    },
+    {
+        path: PATH_ABOUT,
+        element: <About />
     },
     {
         path: PATH_NOT_FOUND,

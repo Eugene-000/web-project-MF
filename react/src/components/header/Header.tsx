@@ -22,7 +22,7 @@ export const Header:React.FC<IProps> = ({banner}) => {
   return (
     <header className={styles.header}>
         <div className={styles.wrapper}>
-            <div className={styles.mainContainer}>
+            <div className={[styles.mainContainer, banner && styles.margin].join(' ')}>
                 <button onClick={handleBurgerMenu} type='button' className={styles.burgerBtn}></button>
                 <div className={styles.navbar}>
                     <ul>

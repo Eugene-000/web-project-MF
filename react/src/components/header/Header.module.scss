@@ -5,14 +5,17 @@ $color-orange: #FF7A00;
 
     .wrapper {
         min-width: 375px;
-        padding: 30px 16px 0;
-    
+        padding: 30px 16px 40px;
+        
+        .margin {
+            margin-bottom: 524px;
+        }
+
         .mainContainer {
             display: flex;
             align-items: center;
             justify-content: center;
             height: 49px;
-            margin-bottom: 524px;
     
             .burgerBtn{
                 background: none;
@@ -160,11 +163,13 @@ $color-orange: #FF7A00;
 @media screen and (min-width: 950px) {
     .header {
         .wrapper {
-            padding: 32px 50px 0;
+            padding: 32px 50px 40px;
             
-            .mainContainer {
+            .margin {
                 margin-bottom: 490px;
+            }
 
+            .mainContainer {
                 .burgerBtn{
                     display: none;
                 }
@@ -238,7 +243,7 @@ $color-orange: #FF7A00;
         .wrapper {
             width: 1170px;
             margin: 0 auto;
-            padding: 32px 0 0;
+            padding: 32px 0 40px;
         }
     }
 }

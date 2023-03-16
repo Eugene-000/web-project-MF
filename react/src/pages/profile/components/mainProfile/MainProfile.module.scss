@@ -1,0 +1,135 @@
+.main {
+    margin-bottom: 40px;
+    .wrapper {
+        min-width: 375px;
+        padding: 0 30px;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-weight: 700;
+                font-size: 30px;
+                color: #000000;
+                margin-bottom: 32px;
+            }
+
+            .personalInfo{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 16px;
+
+                .subtitle{
+                    font-weight: 500;
+                    font-size: 24px;
+                    color: #000000;
+                    margin-bottom: 24px;
+                }
+            }
+
+            .btnsContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 116px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 716px) {
+    .main {
+        .wrapper {
+            .container {
+                .personalInfo {
+                    .inputsContainer {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .inputContainer {
+                            width: calc(50% - 12px);
+                        }
+                    }
+
+                    .adressContainer{
+                        width: calc(50% - 12px);
+                    }
+                }
+
+                .btnsContainer {
+                    height: auto;
+                    flex-direction: row;
+                    justify-content: start;
+
+                    .updateContainer {
+                        display: flex;
+                        width: calc(50% - 12px);
+                        max-width: 374px;
+                        margin-right: 24px;
+                    }
+
+                    .exitContainer{
+                        display: flex;
+                        width: calc(50% - 12px);
+                        max-width: 145px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .main {
+        .wrapper {
+            padding: 0 50px;
+            .container {
+                .title {
+                    font-size: 56px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .main {
+        .wrapper {
+            width: 1170px;
+            margin: 0 auto;
+            padding: 0;
+
+            .container {
+                .personalInfo {
+                    .inputsContainer {
+                        .inputContainer {
+                            width: 374px;
+                        }
+                    }
+
+                    .adressContainer{
+                        width: 374px;
+                    }
+                }
+
+                .btnsContainer {
+                    height: auto;
+                    flex-direction: row;
+                    justify-content: start;
+
+                    .updateContainer {
+                        width: calc(50% - 12px);
+                        max-width: 374px;
+                        margin-right: 24px;
+                    }
+
+                    .exitContainer{
+                        width: calc(50% - 12px);
+                        max-width: 145px;
+                    }
+                }
+            }
+        }
+    }
+}

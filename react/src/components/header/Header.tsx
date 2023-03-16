@@ -37,13 +37,15 @@ export const Header:React.FC<IProps> = ({banner}) => {
                         </li>
                     </ul>
                 </div>
-                <Link to={PATH_HOME} className={styles.logoLink}>
-                    {banner ? (
-                        <img className={styles.logo} src={logoOrange} alt="Логотип" />
-                    ) : (
-                        <img className={styles.logo} src={logoBlack} alt="Логотип" />
-                    )}
-                </Link>
+                <div className={styles.logoContainer}>
+                    <Link to={PATH_HOME} className={styles.logoLink}>
+                        {banner ? (
+                            <img className={styles.logo} src={logoOrange} alt="Логотип" />
+                        ) : (
+                            <img className={styles.logo} src={logoBlack} alt="Логотип" />
+                        )}
+                    </Link>
+                </div>
                 <div className={styles.callback}>
                     <Button painted={false} text='Обратная связь' handleClick={() => null}/>
                 </div>

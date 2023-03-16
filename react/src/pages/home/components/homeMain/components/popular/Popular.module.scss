@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 56px;
+
+    .title {
+        font-weight: 700;
+        font-size: 30px;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    .itemContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,29 @@
+.sizesSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #000000;
+        margin-right: 8px;
+    }
+
+    .sizesContainer  {
+        display: flex;
+
+        .size {
+            font-weight: 400;
+            font-size: 20px;
+            color: #000000;
+            border-right: 1px solid #FF7A00;
+            border-left: 1px solid #FF7A00;
+            padding: 0 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -7,3 +7,5 @@ export const PATH_PROFILE: string = '/profile';
 export const PATH_ABOUT: string = '/about';
 export const PATH_PRODUCT: string = '/catalog/:category_id/:product_id';
 export const PATH_NOT_FOUND: string = '*';
+
+export const SERVER_URL = 'http://localhost:8000/api'

@@ -23,7 +23,9 @@ export const NewCollection:React.FC<IProps> = ({items}) => {
       <p className={styles.title}>Новая коллекция</p>
       <div className={styles.itemContainer}>
         {items && items.map(item => (
-          <MainItem key={item.id} item={item}/>
+          <div className={styles.cardContainer}>
+            <MainItem key={item.id} item={item}/>
+          </div>
         ))}
       </div>
       <Button painted={false} text='Показать больше' icon='arrow' handleClick={handleBtnClick}/>

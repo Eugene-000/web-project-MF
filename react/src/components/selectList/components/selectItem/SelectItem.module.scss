@@ -1,0 +1,24 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    border-bottom: 2px solid #FF7A00;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #FF7A00;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .item {
+        font-size: 20px;
+    }
+}

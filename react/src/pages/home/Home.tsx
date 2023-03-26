@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Footer } from '../../components/footer/Footer';
 import { Header } from '../../components/header/Header'
 import { HomeMain } from './components/homeMain/HomeMain'
 
@@ -20,6 +21,7 @@ export const Home: React.FC = () => {
     <>
       <Header banner={true}/>
       <HomeMain newCollectionItems={newCollectionItems} popularItems={popularItems}/>
+      <Footer />
     </>
   )
 }

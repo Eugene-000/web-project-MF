@@ -14,7 +14,7 @@ export const About = () => {
   }
 
   return (
-    <div className={styles.mainContainer}>
+    <section className={styles.mainContainer}>
       <span className={styles.title}>О нас</span>
       <div className={styles.container}>
         <div className={styles.infoContainer}>
@@ -25,6 +25,6 @@ export const About = () => {
           <img className={styles.image} src={photoAbout} alt="Изображение" />
         </div>
       </div>
-    </div>
+    </section>
   )
 }

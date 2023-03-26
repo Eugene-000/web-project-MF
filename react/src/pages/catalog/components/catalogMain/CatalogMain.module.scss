@@ -1,0 +1,136 @@
+$color-black : #000000;
+
+.main {
+    min-width: 375px;
+    
+    .wrapper {
+        padding: 0 16px 56px;
+
+        .mainContainer {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-weight: 700;
+                font-size: 30px;
+                color: $color-black;
+                margin-bottom: 40px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+
+                .categoryContainer {
+                    margin-bottom: 40px;
+                }
+
+                .cardsContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    .cardContainer {
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .main {
+        .wrapper {
+            .mainContainer {
+                .container {
+                    .cardsContainer {
+                        .cardContainer {
+                            width: 418px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .main {
+        .wrapper {
+            .mainContainer {
+                .container {
+                    .cardsContainer {
+                        justify-content: space-between;
+                        .cardContainer {
+                            width: calc(50% - 16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .main {
+        .wrapper {
+            padding: 0 50px 56px;
+
+            .mainContainer {
+                .title {
+                    font-size: 56px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        .wrapper {
+            .mainContainer {
+                .container {
+                    .cardsContainer {
+                        .cardContainer {
+                            width: calc(33% - 18px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .main {
+        width: 1170px;
+        margin: 0 auto;
+        .wrapper {
+            padding: 0 0 56px;
+
+            .mainContainer {
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .categoryContainer {
+                        width: 300px;
+                    }
+
+                    .cardsContainer {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 766px;
+
+                        .cardContainer {
+                            width: 368px;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

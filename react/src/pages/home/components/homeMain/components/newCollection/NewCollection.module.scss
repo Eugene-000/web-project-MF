@@ -14,5 +14,48 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        .cardContainer {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+@media screen and (min-width: 450px) {
+    .container {
+        .itemContainer {
+            .cardContainer {
+                width: 418px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .container {
+        .itemContainer {
+            .cardContainer {
+                width: calc(50% - 15px);
+
+                &:first-child {
+                    margin-right: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        .itemContainer {
+            .cardContainer {
+                width: calc(33% - 18px);
+                margin-right: 30px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
     }
 }

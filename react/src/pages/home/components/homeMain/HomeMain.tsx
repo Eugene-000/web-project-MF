@@ -6,8 +6,8 @@ import { Popular } from './components/popular/Popular'
 import styles from './HomeMain.module.scss'
 
 interface IProps {
-  newCollectionItems: Array<IItem> | null,
-  popularItems: Array<IItem> | null
+  newCollectionItems?: Array<IItem> | null,
+  popularItems?: Array<IItem> | null
 }
 
 export const HomeMain:React.FC<IProps> = ({newCollectionItems, popularItems}) => {

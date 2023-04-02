@@ -1,10 +1,10 @@
 import axios from "axios";
-import { SERVER_URL } from "../constants/routes";
+import { SERVER_URL_API } from "../constants/routes";
 import { STORE } from "../store";
 import { setVisible } from "../store/modal/actions";
 
 export const HttpClient = axios.create({
-  baseURL: SERVER_URL,
+  baseURL: SERVER_URL_API,
 });
 
 HttpClient.interceptors.request.use(

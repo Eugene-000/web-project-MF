@@ -7,6 +7,7 @@ import logoOrange from '../../assets/images/M&F-orange.png'
 import logoBlack from '../../assets/images/M&F-black.png'
 import profileIcon from '../../assets/images/profile-icon.png'
 import cartIcon from '../../assets/images/cart-icon.png'
+import { createCatalogPath } from '../../lib/createPath'
 
 interface IProps {
     banner: boolean;
@@ -27,7 +28,7 @@ export const Header:React.FC<IProps> = ({banner}) => {
                 <div className={styles.navbar}>
                     <ul>
                         <li>
-                            <Link className={styles.link} to={PATH_CATALOG}>Каталог</Link>
+                            <Link className={styles.link} to={createCatalogPath("all")}>Каталог</Link>
                         </li>
                         <li>
                             <Link className={styles.link} to={PATH_CATALOG}>Услуги</Link>
@@ -63,7 +64,7 @@ export const Header:React.FC<IProps> = ({banner}) => {
                 <div className={styles.burgerNavbar}>
                     <ul>
                         <li>
-                            <Link className={styles.burgerLink} to={PATH_CATALOG}>Каталог</Link>
+                            <Link className={styles.burgerLink} to={createCatalogPath("all")}>Каталог</Link>
                         </li>
                         <li>
                             <Link className={styles.burgerLink} to={PATH_CATALOG}>Услуги</Link>

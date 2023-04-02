@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ICategory } from '../../models/selectList';
 import { SelectItem } from './components/selectItem/SelectItem';
 import styles from './SelectList.module.scss'
 
 interface IProps {
-    handleClickCategory: (id: number) => void
+    categories: Array<ICategory>
+    handleClickCategory: (id: string, categoryName: string) => void
+    selectedCategory: ICategory
 }
 
-export const SelectList: React.FC<IProps> = ({ handleClickCategory }) => {
+export const SelectList: React.FC<IProps> = ({ categories, handleClickCategory, selectedCategory }) => {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -18,45 +20,23 @@ export const SelectList: React.FC<IProps> = ({ handleClickCategory }) => {
             setIsVisible(true);
         }
     }
-
-    const categoryList: ICategory[] = [
-        {
-            id: 1,
-            name: "Верхняя одежда",
-        },
-        {
-            id: 2,
-            name: "Спортивная одежда",
-        },
-        {
-            id: 3,
-            name: "Толстовки и свитшоты",
-        },
-        {
-            id: 4,
-            name: "Джинсы и брюки",
-        },
-        {
-            id: 5,
-            name: "Рубашки и футболки",
-        },
-        {
-            id: 6,
-            name: "Обувь",
-        },
-    ];
+      
     return (
         <>
             <div onClick={handleSetVisibleList} className={styles.wrapper}>
                 <div className={styles.select}>
                     <div className={[styles.mainContainer, isVisible ? styles.height : styles.staticHeight].join(' ')}>
                         <div className={styles.titleContainer}>
-                            <span className={styles.title}>Категории</span>
+                            <span className={styles.title}>{selectedCategory.name}</span>
                             <div className={[styles.selectIcon, isVisible ? styles.rotate : styles.nonRotate].join(' ')}></div>
                         </div>
                         <div className={[styles.listContainer, isVisible ? styles.visible : styles.hide].join(' ')}>
-                            {categoryList.map((item: ICategory) => (
-                                <SelectItem item={item} handleClick={handleClickCategory} key={item.id} />
+                            {categories.map((item: ICategory) => (
+                                <SelectItem 
+                                    item={item} 
+                                    handleClick={handleClickCategory} 
+                                    key={item.id} 
+                                />
                             ))}
                         </div>
                     </div>
@@ -67,8 +47,13 @@ export const SelectList: React.FC<IProps> = ({ handleClickCategory }) => {
                     <span className={styles.title}>Категории</span>
                 </div>
                 <div className={styles.listContainer}>
-                    {categoryList.map((item: ICategory) => (
-                        <SelectItem item={item} handleClick={handleClickCategory} key={item.id} />
+                    {categories.map((item: ICategory) => (
+                        <SelectItem 
+                            isSelected={selectedCategory.id === String(item.id)} 
+                            item={item} 
+                            handleClick={handleClickCategory} 
+                            key={item.id} 
+                        />
                     ))}
                 </div>
             </div>

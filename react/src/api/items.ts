@@ -1,9 +1,9 @@
-import { IItem } from "../models/items";
+import { IItem, INewPopularItem } from "../models/items";
 import { HttpClient } from "./index";
 
 export class ItemsApi {
-  static async getItems(): Promise<Array<IItem>> {
-    const response = await HttpClient.get("/items");
+  static async getItems(category_id?:string): Promise<Array<IItem>> {
+    const response = await HttpClient.get(`${category_id ? (`/items/${category_id}`) : ('/items')}`);
     const items = response.data.data;
     return items;
   }
@@ -14,9 +14,9 @@ export class ItemsApi {
     return item;
   }
 
-  static async getNewItem(): Promise<Array<IItem>> {
-    const response = await HttpClient.get("/newItems");
-    const newItems = response.data.data;
-    return newItems;
+  static async getNewPopularItems(): Promise<INewPopularItem> {
+    const response = await HttpClient.get("/new-popular-items");
+    const newPopularItems = response.data;
+    return newPopularItems;
   }
 }

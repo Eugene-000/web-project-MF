@@ -2,10 +2,9 @@ import React from 'react'
 import { Colors } from '../colors/Colors'
 import { Sizes } from '../sizes/Sizes'
 import styles from './MainItem.module.scss'
-import foto from '../../assets/images/product-image.png'
 import { IItem } from '../../models/items'
 import { Link } from 'react-router-dom'
-import { PATH_PRODUCT } from '../../constants/routes'
+import { PATH_PRODUCT, SERVER_URL } from '../../constants/routes'
 
 
 interface IProps {
@@ -19,7 +18,7 @@ export const MainItem:React.FC<IProps> = ({item}) => {
   return (
     <Link className={styles.container} to={createProductPath(item.category_id, item.id)}>
         <div className={styles.imgContainer}>
-            <img src={foto} className={styles.image} alt="Изображение" />
+            <img src={`${SERVER_URL}${item.image}`} className={styles.image} alt="Изображение" />
         </div>
         <div className={styles.infoContainer}>
             <span className={styles.name}>{item.name}</span>

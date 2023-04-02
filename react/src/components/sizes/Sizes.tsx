@@ -1,8 +1,9 @@
 import React from 'react'
+import { ISize } from '../../models/items'
 import styles from './Sizes.module.scss'
 
 interface IProps {
-    sizes: string[]
+    sizes: ISize[]
 }
 
 export const Sizes:React.FC<IProps> = ({sizes}) => {
@@ -11,7 +12,7 @@ export const Sizes:React.FC<IProps> = ({sizes}) => {
         <span className={styles.title}>Размеры:</span>
         <div className={styles.sizesContainer}>
             {sizes.map(size => (
-                <span key={size} className={styles.size}>{size}</span>
+                <span key={size.id} className={styles.size}>{size.name}</span>
             ))}
         </div>
     </div>

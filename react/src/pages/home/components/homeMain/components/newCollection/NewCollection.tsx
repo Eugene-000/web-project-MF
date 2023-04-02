@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { Button } from '../../../../../../components/button/Button'
 import { MainItem } from '../../../../../../components/mainItem/MainItem'
 import { PATH_CATALOG } from '../../../../../../constants/routes'
+import { createCatalogPath } from '../../../../../../lib/createPath'
 import { IItem } from '../../../../../../models/items'
 import styles from './NewCollection.module.scss'
 
 interface IProps {
-  items: Array<IItem> | null
+  items?: Array<IItem> | null
 }
 
 export const NewCollection:React.FC<IProps> = ({items}) => {
@@ -15,7 +16,7 @@ export const NewCollection:React.FC<IProps> = ({items}) => {
   const navigate = useNavigate();
 
   const handleBtnClick = ():void => {
-    navigate(PATH_CATALOG);
+    navigate(createCatalogPath("all"));
   }
 
   return (
@@ -23,7 +24,7 @@ export const NewCollection:React.FC<IProps> = ({items}) => {
       <p className={styles.title}>Новая коллекция</p>
       <div className={styles.itemContainer}>
         {items && items.map(item => (
-          <div className={styles.cardContainer}>
+          <div key={item.id} className={styles.cardContainer}>
             <MainItem key={item.id} item={item}/>
           </div>
         ))}

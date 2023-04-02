@@ -2,11 +2,12 @@ import React from 'react'
 import styles from './Footer.module.scss'
 import logo from '../../assets/images/M&F-orange.png'
 import { Link } from 'react-router-dom'
-import { PATH_CATALOG } from '../../constants/routes'
+import { PATH_ABOUT, PATH_CART, PATH_PROFILE } from '../../constants/routes'
 import inst from '../../assets/images/inst-icon.png'
 import face from '../../assets/images/face-icon.png'
 import twit from '../../assets/images/twit-icon.png'
 import vk from '../../assets/images/vk-icon.png'
+import { createCatalogPath } from '../../lib/createPath'
 
 export const Footer: React.FC = () => {
   return (
@@ -20,16 +21,16 @@ export const Footer: React.FC = () => {
                     <div className={styles.linksContainer}>
                         <ul>
                             <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>Каталог</Link>
+                                <Link className={styles.link} to={createCatalogPath("all")}>Каталог</Link>
                             </li>
                             <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>Профиль</Link>
+                                <Link className={styles.link} to={PATH_PROFILE}>Профиль</Link>
                             </li>
                             <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>Корзина</Link>
+                                <Link className={styles.link} to={PATH_CART}>Корзина</Link>
                             </li>
                             <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>О нас</Link>
+                                <Link className={styles.link} to={PATH_ABOUT}>О нас</Link>
                             </li>
                         </ul>
                     </div>

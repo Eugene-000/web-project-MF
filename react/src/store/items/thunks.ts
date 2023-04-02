@@ -1,14 +1,19 @@
-import { setItem, setItems, setNewItems } from "./actions";
+import { setItem, setItems, setNewPopularItems } from "./actions";
 import { ItemsApi } from "../../api/items";
 import { Dispatch } from "redux";
 import { ItemAction, ItemActionTypes } from "./types";
 
-export const getItems = () => {
+export const getItems = (category_id?: string) => {
   return async (dispatch: Dispatch<ItemAction>) => {
       try {
           dispatch({type: ItemActionTypes.FETCH_ITEMS})
-          const items = await ItemsApi.getItems();
+          if (category_id) {
+            const items = await ItemsApi.getItems(category_id);
             dispatch(setItems(items))
+          } else {
+            const items = await ItemsApi.getItems();
+            dispatch(setItems(items))
+          }
       } catch (e: any) {
           dispatch({
             type: ItemActionTypes.FETCH_ITEMS_ERROR,
@@ -33,12 +38,12 @@ export const getItem = (id: string) => {
   }
 }
 
-export const getNewItems = () => {
+export const getNewPopularItems = () => {
   return async (dispatch: Dispatch<ItemAction>) => {
       try {
           dispatch({type: ItemActionTypes.FETCH_ITEMS})
-          const newItems = await ItemsApi.getNewItem();
-            dispatch(setNewItems(newItems))
+          const newPopularItems = await ItemsApi.getNewPopularItems();
+            dispatch(setNewPopularItems(newPopularItems))
       } catch (e: any) {
           dispatch({
             type: ItemActionTypes.FETCH_ITEMS_ERROR,

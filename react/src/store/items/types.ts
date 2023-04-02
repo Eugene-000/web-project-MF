@@ -1,9 +1,9 @@
-import { IItem } from "../../models/items";
+import { IItem, INewPopularItem } from "../../models/items";
 
 export interface ItemState {
   items: Array<IItem> | null;
   item: IItem | null;
-  newItems: Array<IItem> | null;
+  newPopularItems: INewPopularItem | null;
   isLoading: boolean;
   error: null | string;
 }
@@ -11,7 +11,7 @@ export interface ItemState {
 export enum ItemActionTypes {
   FETCH_ITEMS = 'FETCH_ITEMS',
   FETCH_ITEMS_SUCCESS = 'FETCH_ITEMS_SUCCESS',
-  FETCH_NEW_ITEMS_SUCCESS = 'FETCH_NEW_ITEMS_SUCCESS',
+  FETCH_NEW_POPULAR_ITEMS_SUCCESS = 'FETCH_NEW_POPULAR_ITEMS_SUCCESS',
   FETCH_ITEMS_ERROR = 'FETCH_ITEMS_ERROR',
   FETCH_ITEM_SUCCESS = 'FETCH_ITEM_SUCCESS',
 }
@@ -22,17 +22,17 @@ interface FetchItemsAction {
 
 interface FetchItemsSuccessAction {
   type: ItemActionTypes.FETCH_ITEMS_SUCCESS;
-  payload: Array<IItem>
+  payload: Array<IItem>;
 }
 
 interface FetchItemSuccessAction {
   type: ItemActionTypes.FETCH_ITEM_SUCCESS;
-  payload: IItem
+  payload: IItem;
 }
 
-interface FetchNewItemsSuccessAction {
-  type: ItemActionTypes.FETCH_NEW_ITEMS_SUCCESS;
-  payload: Array<IItem>
+interface FetchNewPopularItemsSuccessAction {
+  type: ItemActionTypes.FETCH_NEW_POPULAR_ITEMS_SUCCESS;
+  payload: INewPopularItem;
 }
 
 interface FetchItemsErrorAction {
@@ -40,4 +40,4 @@ interface FetchItemsErrorAction {
   payload: string;
 }
 
-export type ItemAction = FetchItemsAction | FetchItemsErrorAction | FetchItemsSuccessAction |  FetchItemSuccessAction | FetchNewItemsSuccessAction
+export type ItemAction = FetchItemsAction | FetchItemsErrorAction | FetchItemsSuccessAction |  FetchItemSuccessAction | FetchNewPopularItemsSuccessAction;

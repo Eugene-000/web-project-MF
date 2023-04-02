@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../../../../components/button/Button'
-import { PATH_CATALOG } from '../../../../../../constants/routes';
+import { PATH_ABOUT, PATH_CATALOG } from '../../../../../../constants/routes';
 import photoAbout from '../../../../../../assets/images/about-image.png'
 import styles from './About.module.scss'
 
@@ -10,7 +10,7 @@ export const About = () => {
   const navigate = useNavigate();
 
   const handleBtnClick = () => {
-    navigate(PATH_CATALOG);
+    navigate(PATH_ABOUT);
   }
 
   return (

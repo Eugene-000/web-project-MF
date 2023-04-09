@@ -4,10 +4,11 @@ import { IColor } from '../../models/items'
 import styles from './Colors.module.scss'
 
 interface IProps {
-    colors: IColor[]
+    colors: IColor[],
+    title: string
 }
 
-export const Colors:React.FC<IProps> = ({colors}) => {
+export const Colors:React.FC<IProps> = ({colors, title}) => {
 
   const getColor = (colorName: string): string => {
     switch(colorName) {
@@ -28,7 +29,7 @@ export const Colors:React.FC<IProps> = ({colors}) => {
 
   return (
     <div className={styles.colorsSection}>
-        <span className={styles.title}>Цвета:</span>
+        <span className={styles.title}>{title}</span>
         <div className={styles.colorsContainer}>
             {colors.map(color => (
                 <div key={color.id} style={{background: getColor(color.name)}} className={styles.color}></div>

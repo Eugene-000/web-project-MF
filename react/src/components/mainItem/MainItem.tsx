@@ -22,8 +22,8 @@ export const MainItem:React.FC<IProps> = ({item}) => {
         </div>
         <div className={styles.infoContainer}>
             <span className={styles.name}>{item.name}</span>
-            <Colors colors={item.colors}/>
-            <Sizes sizes={item.sizes}/>
+            <Colors colors={item.colors} title='Цвета:'/>
+            <Sizes sizes={item.sizes} title='Размеры:'/>
             <div className={styles.priceSection}>
                 <span className={styles.title}>Цена:</span>
                 <span className={styles.price}>{item.price} ₽</span>

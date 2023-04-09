@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ICategory } from '../../models/selectList';
 import { SelectItem } from './components/selectItem/SelectItem';
 import styles from './SelectList.module.scss'
+import { Link } from 'react-router-dom';
+import { createCatalogPath } from '../../lib/createPath';
 
 interface IProps {
     categories: Array<ICategory>
@@ -47,6 +49,13 @@ export const SelectList: React.FC<IProps> = ({ categories, handleClickCategory, 
                     <span className={styles.title}>Категории</span>
                 </div>
                 <div className={styles.listContainer}>
+                    <Link 
+                        to={createCatalogPath("all")} 
+                        className={[styles.item, selectedCategory.id === "all" ? styles.selected : ''].join(' ')} 
+                        onClick={() => handleClickCategory("all", "Все категории")}
+                    >
+                    Все категории
+                    </Link>
                     {categories.map((item: ICategory) => (
                         <SelectItem 
                             isSelected={selectedCategory.id === String(item.id)} 

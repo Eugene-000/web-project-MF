@@ -80,12 +80,34 @@
         justify-content: space-between;
         background-color: #FFFFFF;
         // transition: all 0.2s ease;
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            width: 100%;
+            border-bottom: 2px solid #FF7A00;
+            font-weight: 500;
+            font-size: 16px;
+            color: #000000;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        
+            &:hover {
+                background-color: #FF7A00;
+                color: white;
+            }
+        }
+        .selected {
+            background-color: #FF7A00;
+            color: white;
+        }
     }
 }
 
 .listType {
     display: none;
-    // height: 446px;
 }
 
 @media screen and (min-width: 950px) {
@@ -102,13 +124,19 @@
     }
     .listType {
         display: flex;
-        height: 446px;
+        height: 506px;
         min-width: 300px;
         width: 300px;
 
         .titleContainer {
             .title {
                 font-size: 26px;
+            }
+        }
+
+        .listContainer {
+            .item {
+                font-size: 20px;
             }
         }
     }

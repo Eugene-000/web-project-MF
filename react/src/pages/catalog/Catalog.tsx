@@ -26,8 +26,8 @@ export const Catalog: React.FC = () => {
     if (category_id === 'all') {
       setSelectedCategory(
         {
-          id: '',
-          name: 'Категории',
+          id: 'all',
+          name: 'Все категории',
         }
       );
       getItems();

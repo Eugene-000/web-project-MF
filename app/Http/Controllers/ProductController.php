@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function getProductForIDProduct($product)
+    {
+        $products = Product::with(['category', 'colors', 'sizes'])->where('id', $product)->get();
+
+        return response()->json(['data' => $products]);
+    }
+
     public function getProductsForIDCategory($category)
     {
         $products = Product::with(['category', 'colors', 'sizes'])->where('category_id', $category)->get();

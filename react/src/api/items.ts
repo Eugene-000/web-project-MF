@@ -10,7 +10,7 @@ export class ItemsApi {
 
   static async getItem(id: string): Promise<IItem> {
     const response = await HttpClient.get(`/item/${id}`);
-    const item = response.data.data;
+    const item = response.data.data[0];
     return item;
   }
 

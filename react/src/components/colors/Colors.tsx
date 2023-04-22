@@ -5,10 +5,13 @@ import styles from './Colors.module.scss'
 
 interface IProps {
     colors: IColor[],
-    title: string
+    title: string,
+    selectedColor?: number,
+    handleColorClick?: (id: number) => void
+    productPage?: boolean,
 }
 
-export const Colors:React.FC<IProps> = ({colors, title}) => {
+export const Colors:React.FC<IProps> = ({colors, title, selectedColor, handleColorClick, productPage=false}) => {
 
   const getColor = (colorName: string): string => {
     switch(colorName) {
@@ -28,13 +31,26 @@ export const Colors:React.FC<IProps> = ({colors, title}) => {
   }
 
   return (
-    <div className={styles.colorsSection}>
+    <>
+    {productPage && handleColorClick ? (
+      <div className={styles.colorsSectionMain}>
+        <span className={styles.title}>{title}</span>
+        <div className={styles.colorsContainer}>
+            {colors.map(color => (
+                <div onClick={() => handleColorClick(color.id)} key={color.id} style={{background: getColor(color.name)}} className={[styles.color, selectedColor == color.id ? styles.selected : ""].join(" ")}></div>
+            ))}
+        </div>
+      </div>
+    ) : (
+      <div className={styles.colorsSection}>
         <span className={styles.title}>{title}</span>
         <div className={styles.colorsContainer}>
             {colors.map(color => (
                 <div key={color.id} style={{background: getColor(color.name)}} className={styles.color}></div>
             ))}
         </div>
-    </div>
+      </div>
+    )}
+    </>
   )
 }

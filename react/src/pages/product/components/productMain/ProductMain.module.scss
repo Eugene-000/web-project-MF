@@ -1,0 +1,183 @@
+.wrapper {
+    min-width: 375px;
+    padding: 0 16px 56px;
+
+    .title {
+        display: block;
+        font-weight: 700;
+        font-size: 30px;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 34px;
+
+        .imgContainer {
+            width: 100%;
+            margin-bottom: 34px;
+            margin-right: 80px;
+    
+            .productImage {
+                width: 100%;
+            }
+        }
+
+        .infoContainer {
+            display: flex;
+            flex-direction: column;
+    
+            .sizeContainer, .colorContainer, .countContainer {
+                margin-bottom: 34px;
+            }
+    
+            .container {
+                display: flex;
+                flex-direction: column;
+    
+                .priceContainer {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 14px;
+    
+                    .text {
+                        font-weight: 500;
+                        font-size: 24px;
+                        color: #000000;
+                        margin-bottom: 14px;
+                    }
+    
+                    .price {
+                        font-weight: 700;
+                        font-size: 40px;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+
+    .descriptionContainer {
+        display: flex;
+        flex-direction: column;
+
+        .descriptionTitle {
+            font-weight: 500;
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 14px;
+        }
+
+        .description {
+            font-weight: 400;
+            font-size: 24px;
+            color: #000000;
+        }
+    }
+}
+
+@media screen and (min-width: 544px) {
+    .wrapper {
+        .mainContainer {
+            .infoContainer {
+                .container {
+                    display: flex;
+                    flex-direction: column;
+        
+                    .priceContainer {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-bottom: 14px;
+        
+                        .text {
+                            margin-bottom: 0;
+                            margin-right: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .wrapper {
+        padding: 0 50px 56px;
+    
+        .mainContainer {
+            display: flex;
+            flex-direction: row;
+    
+            .imgContainer {
+                max-width: 512px;
+                width: 100%;
+                margin-bottom: 0;
+                margin-right: 80px;
+        
+                .productImage {
+                    width: 100%;
+                }
+            }
+    
+            .infoContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .container {
+                    display: flex;
+                    flex-direction: column;
+        
+                    .priceContainer {
+                        flex-direction: column;
+                        align-items: start;
+                        margin-bottom: 14px;
+        
+                        .text {
+                            margin-bottom: 14px;
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .wrapper {
+        width: 1170px;
+        margin: 0 auto;
+        padding: 0 0 56px;
+
+        .title {
+            font-size: 56px;
+        }
+
+        .mainContainer {
+            .infoContainer {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+
+                .container {
+                    flex-direction: row;
+                    align-items: center;
+
+                    .priceContainer {
+                        margin-bottom: 0;
+                        margin-right: 40px;
+                    }
+
+                    .addToCart {
+                        align-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

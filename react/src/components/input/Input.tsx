@@ -5,10 +5,18 @@ interface IProps {
     type: string;
     placeholder: string;
     value?: string;
+    inputRef?: React.LegacyRef<HTMLInputElement>;
+    handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void 
 }
 
-export const Input: React.FC<IProps> = ({type, placeholder, value}) => {
+export const Input: React.FC<IProps> = ({type, placeholder, value, inputRef, handleInputChange}) => {
   return (
-    <input className={styles.input} type={type} placeholder={placeholder} value={value}/>
+    <>
+    {inputRef ? (
+      <input ref={inputRef} onChange={handleInputChange} className={styles.input} type={type} placeholder={placeholder} value={value}/>
+    ) : (
+      <input className={styles.input} type={type} placeholder={placeholder} value={value}/>
+    )}
+    </>
   )
 }

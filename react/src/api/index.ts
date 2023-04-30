@@ -9,6 +9,8 @@ export const HttpClient = axios.create({
 
 HttpClient.interceptors.request.use(
   (config) => {
+    const token = localStorage.getItem('ACCESS_TOKEN');
+    config.headers.Authorization = `Bearer ${token}`;
     config.headers["Content-Type"] = "application/json";
     return config;
   },
@@ -23,6 +25,10 @@ HttpClient.interceptors.response.use(
     return response;
   },
   (error) => {
+    const {response} = error;
+    if(response.status == 401) {
+      localStorage.removeItem('ACCESS_TOKEN');
+    }
     STORE.dispatch(setVisible(error.message))
     return Promise.reject(error);
   }

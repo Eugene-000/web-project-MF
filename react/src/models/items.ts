@@ -29,14 +29,13 @@ export interface ICategory {
 export interface IColor {
   id: number;
   name: string;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export interface ISize {
   id: number;
   name: string;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 }
-  

@@ -1,7 +1,8 @@
-import { setItem, setItems, setNewPopularItems } from "./actions";
+import { setCartItems, setItem, setItems, setNewPopularItems } from "./actions";
 import { ItemsApi } from "../../api/items";
 import { Dispatch } from "redux";
 import { ItemAction, ItemActionTypes } from "./types";
+import { CartApi } from "../../api/cart";
 
 export const getItems = (category_id?: string) => {
   return async (dispatch: Dispatch<ItemAction>) => {
@@ -44,6 +45,21 @@ export const getNewPopularItems = () => {
           dispatch({type: ItemActionTypes.FETCH_ITEMS})
           const newPopularItems = await ItemsApi.getNewPopularItems();
             dispatch(setNewPopularItems(newPopularItems))
+      } catch (e: any) {
+          dispatch({
+            type: ItemActionTypes.FETCH_ITEMS_ERROR,
+            payload: e.message
+          })
+      }
+  }
+}
+
+export const getCartItems = (user_id: string) => {
+  return async (dispatch: Dispatch<ItemAction>) => {
+      try {
+        dispatch({type: ItemActionTypes.FETCH_ITEMS})
+        const cartItems = await CartApi.getCartItems(user_id);
+        dispatch(setCartItems(cartItems))
       } catch (e: any) {
           dispatch({
             type: ItemActionTypes.FETCH_ITEMS_ERROR,

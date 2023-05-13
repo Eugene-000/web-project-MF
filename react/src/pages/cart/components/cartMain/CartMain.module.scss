@@ -1,0 +1,31 @@
+.wrapper {
+    min-width: 375px;
+    padding: 0 16px 40px;
+
+    .title {
+        display: block;
+        font-weight: 700;
+        font-size: 30px;
+        color: #000000;
+        margin-bottom: 32px;
+        padding-left: 14px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .wrapper {
+        padding: 0 50px 40px;
+
+        .title {
+            font-size: 56px;
+        }
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .wrapper {
+        width: 1170px;
+        margin: 0 auto;
+        padding: 0 0 56px;
+    }
+}

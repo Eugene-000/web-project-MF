@@ -23,9 +23,7 @@ export const setUserUpdate = (id: string, updateData: IUserUpdate) => {
   return async (dispatch: Dispatch<UserAction>) => {
       try {
           dispatch({type: UserActionTypes.FETCH_USER})
-          const user = await UserApi.setUserUpdate(id, updateData);
-          console.log(user)
-            // dispatch(setUser(user))
+          await UserApi.setUserUpdate(id, updateData);
       } catch (e: any) {
           dispatch({
             type: UserActionTypes.FETCH_USER_ERROR,

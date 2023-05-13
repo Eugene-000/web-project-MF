@@ -5,6 +5,7 @@ import styles from './MainItem.module.scss'
 import { IItem } from '../../models/items'
 import { Link } from 'react-router-dom'
 import { PATH_PRODUCT, SERVER_URL } from '../../constants/routes'
+import { formattedPrice } from '../../utils/priceFormat'
 
 
 interface IProps {
@@ -26,7 +27,7 @@ export const MainItem:React.FC<IProps> = ({item}) => {
             <Sizes sizes={item.sizes} title='Размеры:'/>
             <div className={styles.priceSection}>
                 <span className={styles.title}>Цена:</span>
-                <span className={styles.price}>{item.price} ₽</span>
+                <span className={styles.price}>{formattedPrice(item.price)}</span>
             </div>
         </div>
     </Link>

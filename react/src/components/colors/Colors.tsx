@@ -4,7 +4,7 @@ import { IColor } from '../../models/items'
 import styles from './Colors.module.scss'
 
 interface IProps {
-    colors: IColor[],
+    colors: IColor[] | IColor,
     title: string,
     selectedColor?: number,
     handleColorClick?: (id: number) => void
@@ -36,7 +36,7 @@ export const Colors:React.FC<IProps> = ({colors, title, selectedColor, handleCol
       <div className={styles.colorsSectionMain}>
         <span className={styles.title}>{title}</span>
         <div className={styles.colorsContainer}>
-            {colors.map(color => (
+            {Array.isArray(colors) && colors.map(color => (
                 <div onClick={() => handleColorClick(color.id)} key={color.id} style={{background: getColor(color.name)}} className={[styles.color, selectedColor == color.id ? styles.selected : ""].join(" ")}></div>
             ))}
         </div>
@@ -45,9 +45,11 @@ export const Colors:React.FC<IProps> = ({colors, title, selectedColor, handleCol
       <div className={styles.colorsSection}>
         <span className={styles.title}>{title}</span>
         <div className={styles.colorsContainer}>
-            {colors.map(color => (
+            {Array.isArray(colors) ? colors.map(color => (
                 <div key={color.id} style={{background: getColor(color.name)}} className={styles.color}></div>
-            ))}
+            )) : (
+              <div key={colors.id} style={{background: getColor(colors.name)}} className={styles.color}></div>
+            )}
         </div>
       </div>
     )}

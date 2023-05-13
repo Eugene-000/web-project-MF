@@ -1,3 +1,4 @@
+import { ICartItem } from "../../models/cart";
 import { IItem, INewPopularItem } from "../../models/items";
 import { ItemAction, ItemActionTypes } from "./types";
 
@@ -15,5 +16,10 @@ export const setItem = (item: IItem): ItemAction => ({
 export const setNewPopularItems = (newPopularItems: INewPopularItem): ItemAction => ({
   type: ItemActionTypes.FETCH_NEW_POPULAR_ITEMS_SUCCESS,
   payload: newPopularItems,
+});
+
+export const setCartItems = (cartItems: Array<ICartItem>): ItemAction => ({
+  type: ItemActionTypes.FETCH_CART_ITEMS_SUCCESS,
+  payload: cartItems,
 });
 

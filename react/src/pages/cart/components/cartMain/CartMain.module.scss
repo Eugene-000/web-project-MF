@@ -1,12 +1,14 @@
+@import '../../../../assets/global-style/colors';
+
 .wrapper {
     min-width: 375px;
-    padding: 0 16px 40px;
+    padding: 176px 16px 40px;
 
     .title {
         display: block;
         font-weight: 700;
         font-size: 30px;
-        color: #000000;
+        color: $accent-color;
         margin-bottom: 32px;
         padding-left: 14px;
     }
@@ -14,10 +16,10 @@
 
 @media screen and (min-width: 950px) {
     .wrapper {
-        padding: 0 50px 40px;
+        padding: 176px 50px 40px;
 
         .title {
-            font-size: 56px;
+            font-size: 48px;
         }
     }
 }
@@ -26,6 +28,11 @@
     .wrapper {
         width: 1170px;
         margin: 0 auto;
-        padding: 0 0 56px;
+        padding: 176px 0 56px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }

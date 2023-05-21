@@ -5,10 +5,11 @@ interface ICounter {
   count: number,
   handleAddClick: () => void,
   handleRemoveClick: () => void,
+  direction?: string
 }
-export const Counter: React.FC<ICounter> = ({count, handleAddClick, handleRemoveClick}) => {
+export const Counter: React.FC<ICounter> = ({count, handleAddClick, handleRemoveClick, direction = "column"}) => {
   return (
-    <div className={styles.countSection}>
+    <div className={[styles.countSection, direction === "row" ? styles.row : styles.coloum].join(" ")}>
       <span className={styles.title}>Количество:</span>
       <div className={styles.container}>
         <button onClick={handleAddClick} className={styles.btn}>+</button>

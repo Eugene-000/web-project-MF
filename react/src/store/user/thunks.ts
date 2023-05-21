@@ -24,6 +24,7 @@ export const setUserUpdate = (id: string, updateData: IUserUpdate) => {
       try {
           dispatch({type: UserActionTypes.FETCH_USER})
           await UserApi.setUserUpdate(id, updateData);
+            dispatch(setUser({id, ...updateData}))
       } catch (e: any) {
           dispatch({
             type: UserActionTypes.FETCH_USER_ERROR,

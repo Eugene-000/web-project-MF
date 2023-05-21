@@ -1,7 +1,7 @@
 import axios from "axios";
 import { SERVER_URL_API } from "../constants/routes";
 import { STORE } from "../store";
-import { setVisible } from "../store/modal/actions";
+import { setInvisible, setVisible } from "../store/modal/actions";
 
 export const HttpClient = axios.create({
   baseURL: SERVER_URL_API,
@@ -15,13 +15,24 @@ HttpClient.interceptors.request.use(
     return config;
   },
   (error) => {
-    STORE.dispatch(setVisible(error.message))
+    STORE.dispatch(setVisible(error.message));
+
+    setTimeout(() => {
+      STORE.dispatch(setInvisible(error.message));
+    }, 5000);
     return Promise.reject(error);
   }
 );
 
 HttpClient.interceptors.response.use(
   (response) => {
+    if (response.data.hasOwnProperty('message')) {
+      STORE.dispatch(setVisible(response.data.message));
+
+      setTimeout(() => {
+        STORE.dispatch(setInvisible(response.data.message));
+      }, 5000);
+    }
     return response;
   },
   (error) => {
@@ -29,7 +40,11 @@ HttpClient.interceptors.response.use(
     if(response.status == 401) {
       localStorage.removeItem('ACCESS_TOKEN');
     }
-    STORE.dispatch(setVisible(error.message))
+    STORE.dispatch(setVisible(response.data.message));
+
+    setTimeout(() => {
+      STORE.dispatch(setInvisible(response.data.message));
+    }, 5000);
     return Promise.reject(error);
   }
 );

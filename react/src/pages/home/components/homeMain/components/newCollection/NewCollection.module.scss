@@ -1,3 +1,5 @@
+@import '../../../../../../assets/global-style/colors';
+
 .container {
     display: flex;
     flex-direction: column;
@@ -6,7 +8,7 @@
     .title {
         font-weight: 700;
         font-size: 30px;
-        color: #000000;
+        color: $accent-color;
         margin-bottom: 40px;
     }
 
@@ -18,6 +20,10 @@
         .cardContainer {
             margin-bottom: 32px;
         }
+    }
+
+    .btnContainer {
+        width: 186px;
     }
 }
 

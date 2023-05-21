@@ -29,3 +29,11 @@ export interface ICartItem {
 export interface IUpdateQuantity {
   quantity: number;
 }
+
+export interface IOrderItem {
+  full_name: string;
+  email: string;
+  phone: string;
+  delivery_address: string;
+  total_price?: number;
+}

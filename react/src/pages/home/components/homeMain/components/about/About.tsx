@@ -19,7 +19,9 @@ export const About = () => {
       <div className={styles.container}>
         <div className={styles.infoContainer}>
           <p className={styles.text}><span>Men’s Fashion-один из ведущих мировых брендов дизайнерского стиля жизни, признанный на международном уровне за то, что он отражает суть классического американского крутого стиля, отличающегося опрятным дизайном с изюминкой.</span><br /><span>Men’s Fashion является глобальной компанией по производству одежды и розничной торговле с более чем 16 000 партнерами по всему миру. Благодаря поддержке широкого признания потребителей во всем мире Tommy Hilfiger создал обширную дистрибьюторскую сеть в более чем 100 странах и более 2000 розничных магазинов по всей Северной Америке и Европе.</span></p>
-          <Button painted={false} text='Читать далее' handleClick={handleBtnClick} icon='arrow'/>
+          <div className={styles.btnContainer}>
+            <Button painted={false} text='Читать далее' handleClick={handleBtnClick} icon='arrow'/>
+          </div>
         </div>
         <div className={styles.imgContainer}>
           <img className={styles.image} src={photoAbout} alt="Изображение" />

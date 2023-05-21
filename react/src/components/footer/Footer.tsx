@@ -36,8 +36,8 @@ export const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className={styles.lastContainer}>
-                    <span className={styles.brand}>© 2022 Men's Fashion</span>
-                    <div className={styles.socialIconsContainer}>
+                    <span className={styles.brand}>© 2023 Men's Fashion</span>
+                    {/* <div className={styles.socialIconsContainer}>
                         <a className={styles.socialIconlink} href="#">
                             <img className={styles.socialIcon} src={vk} alt="Вконтакте" />
                         </a>
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                         <a className={styles.socialIconlink} href="#">
                             <img className={styles.socialIcon} src={twit} alt="Twitter" />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

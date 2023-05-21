@@ -26,13 +26,15 @@ export const CartMain:React.FC<IProps> = (
   return (
     <div className={styles.wrapper}>
       <span className={styles.title}>Корзина</span>
-      <CartItemsList 
-        cartItems={cartItems} 
-        handleAddCartItemCountClick={handleAddCartItemCountClick} 
-        handleRemoveCartItemCountClick={handleRemoveCartItemCountClick}
-        handleRemoveCartItemClick={handleRemoveCartItemClick}
-      />
-      <CartForm totalPrice={totalPrice} user={user}/>
+      <div className={styles.container}>
+        <CartItemsList 
+          cartItems={cartItems} 
+          handleAddCartItemCountClick={handleAddCartItemCountClick} 
+          handleRemoveCartItemCountClick={handleRemoveCartItemCountClick}
+          handleRemoveCartItemClick={handleRemoveCartItemClick}
+        />
+        <CartForm totalPrice={totalPrice} user={user}/>
+      </div>
     </div>
   )
 }

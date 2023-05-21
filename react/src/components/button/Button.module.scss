@@ -1,5 +1,4 @@
-$color-orange: #FF7A00;
-$color-white: #FFFFFF;
+@import '../../assets/global-style/colors';
 
 .btn {
     padding: 16px 16px;
@@ -7,12 +6,12 @@ $color-white: #FFFFFF;
     font-weight: 400;
     font-size: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .painted {
     width: 100%;
-    color: $color-white;
+    color: $accent-color;
     background: $color-orange;
     border: none;
     border-radius: 10px;
@@ -27,9 +26,9 @@ $color-white: #FFFFFF;
 
 .arrow {
     position: relative;
-    width: 186px;
+    width: 100%;
     color: $color-orange;
-    background: $color-white;
+    background: none;
     border: 1.5px solid $color-orange;
     text-align: left;
 
@@ -47,7 +46,7 @@ $color-white: #FFFFFF;
 .cart {
     position: relative;
     width: 153px;
-    color: $color-white;
+    color: $accent-color;
     background: $color-orange;
     border: none;
     border-radius: 10px;

@@ -1,12 +1,14 @@
+@import '../../assets/global-style/colors';
+
 .colorsSection {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
 
     .title {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 20px;
-        color: #000000;
+        color: $text-color;
         margin-right: 16px;
     }
 
@@ -16,7 +18,7 @@
         .color {
             width: 20px;
             height: 20px;
-            border: 1px solid #000000;
+            border: 2px solid $border-color;
             border-radius: 50%;
             margin-right: 8px;
 
@@ -34,7 +36,7 @@
     .title {
         font-weight: 500;
         font-size: 24px;
-        color: #000000;
+        color: $text-color;
         margin-bottom: 14px;
     }
 
@@ -44,7 +46,7 @@
         .color {
             width: 40px;
             height: 40px;
-            border: 2px solid #737373;
+            border: 2px solid $border-color;
             border-radius: 50%;
             margin-right: 14px;
             cursor: pointer;
@@ -54,12 +56,12 @@
             }
 
             &:hover {
-                border: 4px solid #ff9430;
+                border: 4px solid $color-orange;
             }
         }
 
         .selected {
-            border: 4px solid #ff9430;
+            border: 4px solid $color-orange;
         }
     }
 }

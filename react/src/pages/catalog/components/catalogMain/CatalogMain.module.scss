@@ -1,7 +1,8 @@
-$color-black : #000000;
+@import '../../../../assets/global-style/colors';
 
 .main {
     min-width: 375px;
+    padding-top: 176px;
     
     .wrapper {
         padding: 0 16px 56px;
@@ -13,7 +14,7 @@ $color-black : #000000;
             .title {
                 font-weight: 700;
                 font-size: 30px;
-                color: $color-black;
+                color: $accent-color;
                 margin-bottom: 40px;
             }
 
@@ -79,7 +80,7 @@ $color-black : #000000;
 
             .mainContainer {
                 .title {
-                    font-size: 56px;
+                    font-size: 48px;
                 }
             }
         }

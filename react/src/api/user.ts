@@ -10,6 +10,7 @@ export class UserApi {
 
   static async setUserUpdate(user_id: string, updateData: IUserUpdate): Promise<IUser> {
     const response = await HttpClient.put(`/user/${user_id}`, updateData);
+    console.log(response)
     const user = response.data;
     return user;
   }

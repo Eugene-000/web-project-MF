@@ -1,4 +1,7 @@
+@import '../../../../assets/global-style/colors';
+
 .main {
+    padding-top: 176px;
     margin-bottom: 40px;
     .wrapper {
         min-width: 375px;
@@ -11,7 +14,7 @@
             .title {
                 font-weight: 700;
                 font-size: 30px;
-                color: #000000;
+                color: $accent-color;
                 margin-bottom: 32px;
             }
 
@@ -23,7 +26,7 @@
                 .subtitle{
                     font-weight: 500;
                     font-size: 24px;
-                    color: #000000;
+                    color: $text-color;
                     margin-bottom: 24px;
                 }
             }
@@ -86,7 +89,7 @@
             padding: 0 50px;
             .container {
                 .title {
-                    font-size: 56px;
+                    font-size: 48px;
                 }
             }
         }

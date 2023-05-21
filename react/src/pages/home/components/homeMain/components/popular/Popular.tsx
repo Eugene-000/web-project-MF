@@ -29,7 +29,9 @@ export const Popular:React.FC<IProps> = ({items}) => {
           </div>
         ))}
       </div>
-      <Button painted={false} text='Показать больше' icon='arrow' handleClick={handleBtnClick}/>
+      <div className={styles.btnContainer}>
+        <Button painted={false} text='Показать больше' icon='arrow' handleClick={handleBtnClick}/>
+      </div>
     </section>
   )
 }

@@ -5,6 +5,7 @@ import { selectListReducer } from "./selectList/reducer";
 import { authUserReducer } from "./auth/user/reducer";
 import { authTokenReducer } from "./auth/token/reducer";
 import { userReducer } from "./user/reducer";
+import { cartReducer } from "./cart/reducer";
 
 export enum StoreSection {
   items = "items",
@@ -12,7 +13,8 @@ export enum StoreSection {
   selectList = "selectList",
   authUser = "authUser",
   authToken = "authToken",
-  user = "user"
+  user = "user",
+  cart = "cart"
 }
 
 export const rootReducer = combineReducers({
@@ -22,6 +24,7 @@ export const rootReducer = combineReducers({
   [StoreSection.authUser]: authUserReducer,
   [StoreSection.authToken]: authTokenReducer,
   [StoreSection.user]: userReducer,
+  [StoreSection.cart]: cartReducer,
 });
 
 export type IRootState = ReturnType<typeof rootReducer>;

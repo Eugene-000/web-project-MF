@@ -35,6 +35,8 @@ Route::post('/cart/add', [CartController::class, 'addProductToCart']);
 Route::put('/cart/{cartItemId}/update-quantity', [CartController::class, 'updateCartItemQuantity']);
 Route::put('/cart/{cartItemId}/delete-item', [CartController::class, 'deleteCartItem']);
 
+Route::post('/order/add', [CartController::class, 'addProductsToOrder']);
+
 //! Для диплома
 Route::get('/system_data/{start_time}/{end_time}', [CartController::class, 'getSystemData']);
 

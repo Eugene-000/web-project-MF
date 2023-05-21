@@ -8,6 +8,7 @@ import * as AuthTokenActionsCreators from "./auth/token/actions";
 import * as AuthTokenThunksCreators from "./auth/token/thunks";
 import * as ModalActionCreators from "./modal/actions";
 import * as SelectListActionCreators from "./selectList/actions"
+import * as CartActionCreator from "./cart/actions"
 
 export const ActionCreators = {
   ...ItemsActionCreators,
@@ -20,4 +21,5 @@ export const ActionCreators = {
   ...AuthTokenThunksCreators,
   ...UserActionCreators,
   ...UserThunksCreators,
+  ...CartActionCreator,
 };

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
 use App\Models\User;
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,8 +32,13 @@ class AuthController extends Controller
         $user = User::create([
             'full_name' => $data['full_name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['password']),
+            'delivery_address' => $data['delivery_address'],
+            'phone' => $data['phone'],
         ]);
+
+        $cart = new Cart();
+        $user->cart()->save($cart);
 
         $token = $user->createToken('main')->plainTextToken;
 

@@ -1,11 +1,11 @@
 .main {
     min-width: 375px;
-    padding: 56px 16px;
+    padding: 176px 16px 56px;
 }
 
 @media screen and (min-width: 950px) {
     .main {
-        padding: 56px 50px 56px;
+        padding: 176px 50px 56px;
     }
 }
 
@@ -13,6 +13,6 @@
     .main {
         width: 1170px;
         margin: 0 auto;
-        padding: 56px 0 56px;
+        padding: 176px 0 56px;
     }
 }

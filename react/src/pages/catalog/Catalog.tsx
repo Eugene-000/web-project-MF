@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styles from './Catalog.module.scss'
 import { useParams } from 'react-router-dom'
 import { CategoriesApi } from '../../api/categories'
 import { Footer } from '../../components/footer/Footer'
@@ -7,6 +8,7 @@ import { useActions } from '../../hooks/useAction'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { ICategory } from '../../models/selectList'
 import { CatalogMain } from './components/catalogMain/CatalogMain'
+import { Loader } from '../../components/loader/Loader'
 
 export const Catalog: React.FC = () => {
 
@@ -55,7 +57,8 @@ export const Catalog: React.FC = () => {
   }
 
   return (
-    <>
+    <div className={styles.pageRoot}>
+      {isLoading && <Loader />}
       <Header banner={false}/>
       <CatalogMain 
         selectedCategory={selectedCategory} 
@@ -63,6 +66,6 @@ export const Catalog: React.FC = () => {
         items={items} 
         handleClickCategory={handleClickCategory}/>
       <Footer />
-    </>
+    </div>
   )
 }

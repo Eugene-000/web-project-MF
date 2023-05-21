@@ -1,24 +1,32 @@
+@import '../../../../assets/global-style/colors';
+
 .item {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px;
     width: 100%;
-    border-bottom: 2px solid #FF7A00;
+    border: 1px solid $border-color;
     font-weight: 500;
     font-size: 16px;
-    color: #000000;
+    color: $text-color;
     transition: all 0.2s ease;
+    text-decoration: none;
     cursor: pointer;
 
     &:hover {
-        background-color: #FF7A00;
-        color: white;
+        // background-color: $color-orange;
+        border: none;
+        border: 2px solid $color-orange;
+        // border-color: $color-orange;
+        color: $color-orange;
     }
 }
 .selected {
-    background-color: #FF7A00;
-    color: white;
+    // background-color: $color-orange;
+    border: none;
+    border: 2px solid $color-orange;
+    color: $color-orange;
 }
 
 @media screen and (min-width: 1270px) {

@@ -1,20 +1,31 @@
+@import '../../assets/global-style/colors';
+
 .input {
     font-size: 16px;
     font-weight: 200;
     width: 100%;
     padding: 14px;
-    background: #FFFFFF;
+    background: $bg-color;
+    color: $accent-color;
     border: none;
-    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(132, 132, 175, 0.2);
+    // box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     outline: none;
     margin-bottom: 16px;
+    transition: all 0.3s ease;
 
     &:hover {
-        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.300);
+        // box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.300);
+        border-color: $border-color;
     }
 
     &:focus {
-        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.300);
+        // box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.300);
+        border-color: $border-color;
+    }
+
+    &::placeholder {
+        color: $text-color;
     }
 }

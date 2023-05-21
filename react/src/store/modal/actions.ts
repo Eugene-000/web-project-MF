@@ -5,6 +5,7 @@ export const setVisible = (text: string) => ({
     payload: text,
 });
   
-export const setInvisible = () => ({
-    type: ModalActionTypes.SET_INVISIBLE_MODAL as const
+export const setInvisible = (text: string) => ({
+    type: ModalActionTypes.SET_INVISIBLE_MODAL as const,
+    payload: text,
 });

@@ -1,0 +1,30 @@
+@import '../../assets/global-style/colors';
+
+.mask {
+    position: fixed;
+    right: -100%;
+    top: 140px;
+    z-index: 200;
+    transition: right 1s ease;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        background: $dia-bg-color;
+        border: 2px solid $border-color;
+        color: $accent-color;
+        // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+        border-radius: 8px;
+        padding: 10px;
+    }
+}
+
+.show {
+    right: 20px;
+}
+
+.hide {
+    right: -100%;
+}

@@ -1,5 +1,5 @@
 import { IItem, INewPopularItem } from "../../models/items";
-import { IUser } from "../../models/user";
+import { IUser, IUserUpdate } from "../../models/user";
 
 export interface UserState {
   user: IUser | null;

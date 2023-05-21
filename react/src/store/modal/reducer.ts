@@ -10,7 +10,7 @@ export const modalReducer = (state = initialState, action: ModalAction): ModalSt
         case ModalActionTypes.SET_VISIBLE_MODAL:
             return {visible: true, text: action.payload}
         case ModalActionTypes.SET_INVISIBLE_MODAL:
-            return {visible: false, text: null}
+            return {visible: false, text: action.payload}
         default:
             return state;
     }

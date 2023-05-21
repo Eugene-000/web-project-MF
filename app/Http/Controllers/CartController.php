@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\CartItem;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderConfirmation;
+
 
 //! Для диплома
 use DateTime;
@@ -222,7 +228,7 @@ class CartController extends Controller
                 "end_time"=> "2023-05-08 15:39:18",
                 "id"=> 2,
                 "module_name"=> "Translator",
-                "session_id"=> 1,
+                "session_id"=> null,
                 "start_time"=> "2023-05-08 15:38:03",
                 "status"=> "NT0"
             ],
@@ -262,7 +268,7 @@ class CartController extends Controller
                 "end_time"=> "2023-05-08 16:29:18",
                 "id"=> 7,
                 "module_name"=> "Translator",
-                "session_id"=> 2,
+                "session_id"=> null,
                 "start_time"=> "2023-05-08 16:28:03",
                 "status"=> "NT3"
             ],
@@ -291,13 +297,59 @@ class CartController extends Controller
                 "status"=> "E205"
             ],
         ];
-        $randomNumber = rand(1, 10);
 
-        if ($randomNumber > 5) {
+        $data3 = [];
+        $randomNumber = rand(1, 15);
+
+        if ($randomNumber > 10) {
             return response()->json($data);
-        } else {
+        } else if ($randomNumber > 5){
             return response()->json($data2);
+        } else {
+            return response()->json($data3);
         }
     }
 
+    public function addProductsToOrder(Request $request)
+    {
+        $userId = $request->input('user_id');
+        $deliveryAddress = $request->input('delivery_address');
+        $totalPrice = $request->input('total_price');
+        $user = User::findOrFail($userId);
+        $cart = $user->cart;
+        
+        // Создание нового заказа
+        $order = new Order([
+            'user_id' => $user->id,
+            'date' => Carbon::now()->addWeek()->toDateString(),
+            'delivery_address' => $deliveryAddress,
+            'total_price' => $totalPrice
+            // Дополнительные поля заказа (если есть)
+        ]);
+        
+        // Сохранение заказа
+        $order->save();
+        
+        // Связывание продуктов из корзины с заказом
+        foreach ($cart->cartItems as $cartItem) {
+            $orderItem = new OrderItem([
+                'product_id' => $cartItem->product_id,
+                'color_id' => $cartItem->color_id,
+                'size_id' => $cartItem->size_id,
+                'quantity' => $cartItem->quantity,
+            ]);
+            
+            // Связывание заказа с заказанными продуктами
+            $order->orderItems()->save($orderItem);
+        }
+        
+        // Удаление продуктов из корзины
+        $cart->cartItems()->delete();
+
+        // Отправка информации о заказе на почту
+        Mail::to($user->email)->send(new OrderConfirmation($order));
+
+        
+        return response()->json(['message' => 'Order created successfully.'], Response::HTTP_CREATED);
+    }
 }

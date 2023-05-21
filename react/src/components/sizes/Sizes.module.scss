@@ -1,12 +1,14 @@
+@import '../../assets/global-style/colors';
+
 .sizesSection {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
     
     .title {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 20px;
-        color: #000000;
+        color: $text-color;
         margin-right: 8px;
     }
 
@@ -16,9 +18,9 @@
         .size {
             font-weight: 400;
             font-size: 20px;
-            color: #000000;
-            border-right: 1px solid #FF7A00;
-            border-left: 1px solid #FF7A00;
+            color: $accent-color;
+            border-right: 1px solid $color-orange;
+            border-left: 1px solid $color-orange;
             padding: 0 8px;
 
             &:last-child {
@@ -35,7 +37,7 @@
     .title {
         font-weight: 500;
         font-size: 24px;
-        color: #000000;
+        color: $text-color;
         margin-bottom: 14px;
     }
 
@@ -50,8 +52,8 @@
             height: 40px;
             font-weight: 500;
             font-size: 17px;
-            color: #000000;
-            border: 2px solid #737373;
+            color: $accent-color;
+            border: 2px solid $border-color;
             margin-right: 14px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -61,14 +63,14 @@
             }
 
             &:hover {
-                background-color: #FF7A00;
-                color: #ffffff;
+                background-color: $color-orange;
+                color: $accent-color;
             }
         }
 
         .selected {
-            background-color: #FF7A00;
-            color: #ffffff;
+            background-color: $color-orange;
+            color: $accent-color;
         }
     }
 }

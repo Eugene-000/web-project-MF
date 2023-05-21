@@ -1,12 +1,13 @@
+@import '../../assets/global-style/colors';
+
 .countSection {
     display: flex;
     flex-direction: column;
 
     .title {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 24px;
-        color: #000000;
-        margin-bottom: 14px;
+        color: $text-color;
     }
 
     .container {
@@ -18,13 +19,13 @@
         .count {
             font-weight: 700;
             font-size: 32px;
-            color: #FF7A00;
+            color: $color-orange;
         }
 
         .btn {
             font-weight: 700;
             font-size: 32px;
-            color: #FF7A00;
+            color: $color-orange;
             border: none;
             background: none;
             cursor: pointer;
@@ -50,9 +51,20 @@
         align-items: start;
     
         .title {
-            margin-bottom: 14px;
-            margin-right: 0;
+            margin-bottom: 0;
+            margin-right: 16px;
         }
     }
+}
+
+.row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    // width: 250px;
+}
+
+.coloumn {
+    flex-direction: column;
 }
 

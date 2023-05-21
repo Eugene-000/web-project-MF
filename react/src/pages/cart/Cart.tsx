@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styles from './Cart.module.scss'
 import { Footer } from '../../components/footer/Footer'
 import { Header } from '../../components/header/Header'
 import { CartMain } from './components/cartMain/CartMain'
@@ -6,6 +7,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector'
 import { useActions } from '../../hooks/useAction'
 import { CartApi } from '../../api/cart'
 import { getTotalCartPrice } from '../../utils/cart'
+import { Loader } from '../../components/loader/Loader'
 
 export const Cart: React.FC = () => {
   const {cartItems, error, isLoading} = useTypedSelector(state => state.items);
@@ -14,7 +16,9 @@ export const Cart: React.FC = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [userId, setUserID] = useState(localStorage.getItem('USER_ID'));
   const {user} = useTypedSelector(state => state.user);
-  const {getUser} = useActions();
+  const { isAddOrder } = useTypedSelector(state => state.cart);
+
+  const {getUser, setIsAddOrder} = useActions();
   useEffect(() => {
     if (userId) {
       getUser(userId);
@@ -26,7 +30,8 @@ export const Cart: React.FC = () => {
       getCartItems(userId);
     }
     setUpdateCart(false);
-  }, [updateCart])
+    setIsAddOrder(false);
+  }, [updateCart, isAddOrder])
 
   useEffect(() => {
     if(cartItems) {
@@ -56,7 +61,8 @@ export const Cart: React.FC = () => {
   }
 
   return (
-    <>
+    <div className={styles.pageRoot}>
+      {isLoading && <Loader />}
       <Header banner={false}/>
       <CartMain 
         cartItems={cartItems}
@@ -67,6 +73,6 @@ export const Cart: React.FC = () => {
         user={user}
       />
       <Footer />
-    </>
+    </div>
   )
 }

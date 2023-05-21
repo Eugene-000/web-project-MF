@@ -1,12 +1,15 @@
+@import '../../../../assets/global-style/colors';
+
 .wrapper {
+    flex: 1 auto;
     min-width: 375px;
-    padding: 0 16px 56px;
+    padding: 176px 16px 56px;
 
     .title {
         display: block;
         font-weight: 700;
         font-size: 30px;
-        color: #000000;
+        color: $accent-color;
         margin-bottom: 40px;
     }
 
@@ -45,14 +48,14 @@
                     .text {
                         font-weight: 500;
                         font-size: 24px;
-                        color: #000000;
+                        color: $text-color;
                         margin-bottom: 14px;
                     }
     
                     .price {
                         font-weight: 700;
                         font-size: 40px;
-                        color: #000000;
+                        color: $accent-color;
                     }
                 }
             }
@@ -66,14 +69,14 @@
         .descriptionTitle {
             font-weight: 500;
             font-size: 24px;
-            color: #000000;
+            color: $accent-color;
             margin-bottom: 14px;
         }
 
         .description {
             font-weight: 400;
             font-size: 24px;
-            color: #000000;
+            color: $accent-color;
         }
     }
 }
@@ -105,7 +108,7 @@
 
 @media screen and (min-width: 950px) {
     .wrapper {
-        padding: 0 50px 56px;
+        padding: 176px 50px 56px;
     
         .mainContainer {
             display: flex;
@@ -151,10 +154,10 @@
     .wrapper {
         width: 1170px;
         margin: 0 auto;
-        padding: 0 0 56px;
+        padding: 176px 0 56px;
 
         .title {
-            font-size: 56px;
+            font-size: 48px;
         }
 
         .mainContainer {

@@ -48,7 +48,6 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
 
   const handleAddOrder = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsLoading(true);
     if (cartItems?.length) {
       if (
         user &&
@@ -58,6 +57,7 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
         addressRef.current?.value &&
         totalPrice
       ) {
+        setIsLoading(true);
         const payload = {
           user_id: user.id,
           full_name: fullNameRef.current?.value,
@@ -80,6 +80,11 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
           setModalState({ text: "Заполните все поля для оформления заказа", visible: false })
         }, 5000)
       }
+    } else {
+      setModalState({ text: "Корзина пустая, добавьте товары", visible: true })
+      setTimeout(() => {
+        setModalState({ text: "Корзина пустая, добавьте товары", visible: false })
+      }, 5000)
     }
   };
 
@@ -95,7 +100,7 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
               <Input
                 inputRef={fullNameRef}
                 type='text'
-                placeholder='Введите ФИО'
+                placeholder='* Введите ФИО'
                 value={fullName}
                 handleInputChange={(e) => setFullName(e.target.value)}
               />
@@ -104,7 +109,7 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
               <Input
                 inputRef={phoneRef}
                 type='phone'
-                placeholder='Введите номер телефона'
+                placeholder='* Введите номер телефона'
                 value={phone}
                 handleInputChange={(e) => setPhone(e.target.value)}
               />
@@ -113,7 +118,7 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
               <Input
                 inputRef={emailRef}
                 type='email'
-                placeholder='Введите E-mail'
+                placeholder='* Введите E-mail'
                 value={email}
                 handleInputChange={(e) => setEmail(e.target.value)}
               />
@@ -122,7 +127,7 @@ export const CartForm: React.FC<IProps> = ({ totalPrice, user }) => {
               <Input
                 inputRef={addressRef}
                 type='text'
-                placeholder='Введите адрес доставки'
+                placeholder='* Введите адрес доставки'
                 value={address}
                 handleInputChange={(e) => setAddress(e.target.value)}
               />

@@ -18,6 +18,9 @@ class ProductColorsTableSeeder extends Seeder
         DB::table('product_colors')->insert([
             ['product_id' => 1, 'color_id' => 1, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 1, 'color_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 1, 'color_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 1, 'color_id' => 4, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 1, 'color_id' => 5, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 2, 'color_id' => 3, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 2, 'color_id' => 4, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 3, 'color_id' => 1, 'created_at' => now(), 'updated_at' => now()],
@@ -36,6 +39,12 @@ class ProductColorsTableSeeder extends Seeder
             ['product_id' => 10, 'color_id' => 2, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 10, 'color_id' => 3, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 10, 'color_id' => 5, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 11, 'color_id' => 1, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 11, 'color_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 11, 'color_id' => 4, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 12, 'color_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 13, 'color_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 14, 'color_id' => 1, 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

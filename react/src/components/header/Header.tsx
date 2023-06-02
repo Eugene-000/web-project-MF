@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PATH_CART, PATH_CATALOG, PATH_HOME, PATH_PROFILE } from '../../constants/routes'
+import { PATH_ABOUT, PATH_CART, PATH_CATALOG, PATH_HOME, PATH_NOT_FOUND, PATH_PROFILE } from '../../constants/routes'
 import { Button } from '../button/Button'
 import styles from './Header.module.scss'
 import logoOrange from '../../assets/images/M&F-orange.png'
@@ -28,13 +28,13 @@ export const Header: React.FC<IProps> = ({ banner }) => {
                     <div className={styles.navbar}>
                         <ul>
                             <li>
+                                <Link className={styles.link} to={PATH_HOME}>Главная</Link>
+                            </li>
+                            <li>
                                 <Link className={styles.link} to={createCatalogPath("all")}>Каталог</Link>
                             </li>
                             <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>Услуги</Link>
-                            </li>
-                            <li>
-                                <Link className={styles.link} to={PATH_CATALOG}>Контакты</Link>
+                                <Link className={styles.link} to={PATH_ABOUT}>О нас</Link>
                             </li>
                         </ul>
                     </div>

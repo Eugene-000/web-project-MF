@@ -18,6 +18,8 @@ class ProductSizesTableSeeder extends Seeder
         DB::table('product_sizes')->insert([
             ['product_id' => 1, 'size_id' => 1, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 1, 'size_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 1, 'size_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 1, 'size_id' => 4, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 2, 'size_id' => 3, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 2, 'size_id' => 4, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 3, 'size_id' => 1, 'created_at' => now(), 'updated_at' => now()],
@@ -36,6 +38,12 @@ class ProductSizesTableSeeder extends Seeder
             ['product_id' => 10, 'size_id' => 2, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 10, 'size_id' => 3, 'created_at' => now(), 'updated_at' => now()],
             ['product_id' => 10, 'size_id' => 5, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 11, 'size_id' => 1, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 11, 'size_id' => 2, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 12, 'size_id' => 3, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 13, 'size_id' => 4, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 13, 'size_id' => 5, 'created_at' => now(), 'updated_at' => now()],
+            ['product_id' => 14, 'size_id' => 1, 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

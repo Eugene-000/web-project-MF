@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert([
             ['name' => 'Верхняя одежда', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Спортивная одежда', 'created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Толстовки и свитшоты', 'created_at' => now(), 'updated_at' => now()],
+            ['name' => 'Толстовки и свитеры', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Джинсы и брюки', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Рубашки и футболки', 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Шорты', 'created_at' => now(), 'updated_at' => now()],

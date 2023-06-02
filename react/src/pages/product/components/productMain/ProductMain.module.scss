@@ -75,8 +75,8 @@
 
         .description {
             font-weight: 400;
-            font-size: 24px;
-            color: $accent-color;
+            font-size: 20px;
+            color: $text-color;
         }
     }
 }
@@ -121,6 +121,7 @@
                 margin-right: 80px;
         
                 .productImage {
+                    border: 2px solid $border-color;
                     width: 100%;
                 }
             }

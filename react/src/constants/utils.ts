@@ -1,7 +1,7 @@
 export enum ITEM_COLORS {
-    RED = "Red",
-    BLUE = "Blue",
-    GREEN = "Green",
-    YELLOW = "Yellow",
-    BLACK = "Black",
+    RED = "Красный",
+    BLUE = "Синий",
+    GREEN = "Зелёный",
+    YELLOW = "Жёлтый",
+    BLACK = "Чёрный",
 }

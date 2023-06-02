@@ -16,7 +16,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
         if (!Auth::attempt($credentials)) {
             return response([
-                'message' => 'Email or password incorrect'
+                'message' => 'Email или пароль некорректны!'
             ]);
         }
         /** @var User $user */

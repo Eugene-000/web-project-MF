@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className={styles.lastContainer}>
-                    <span className={styles.brand}>© 2023 Men's Fashion</span>
+                    <span className={styles.brand}>© 2023 Интернет магазин мужской одежды M&F</span>
                     {/* <div className={styles.socialIconsContainer}>
                         <a className={styles.socialIconlink} href="#">
                             <img className={styles.socialIcon} src={vk} alt="Вконтакте" />

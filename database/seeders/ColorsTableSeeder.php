@@ -17,27 +17,27 @@ class ColorsTableSeeder extends Seeder
     {
         DB::table('colors')->insert([
             [
-                'name' => 'Red',
+                'name' => 'Красный',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Blue',
+                'name' => 'Синий',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Green',
+                'name' => 'Зелёный',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Yellow',
+                'name' => 'Жёлтый',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Black',
+                'name' => 'Чёрный',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

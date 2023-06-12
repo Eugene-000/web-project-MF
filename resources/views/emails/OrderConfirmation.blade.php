@@ -11,14 +11,14 @@
     <p>В день доставки курьер свяжется с вами для назначения точного времени.</p>
     <h2>Информация о заказе</h2>
     <p>Номер заказа: {{ $order->id }}</p>
-    <p>Адрес доставки: {{ $order->user->email }}</p>
+    <p>Адрес доставки: {{ $order->user->delivery_address }}</p>
     <p>Дата доставки: {{ $order->date }} </p>
     
     <h2>Заказанные товары</h2>
     <ol>
         @foreach ($order->orderItems as $item)
             <li>
-                <p>Название продукта: {{ $item->product->name }}</p>
+                <p>Название товара: {{ $item->product->name }}</p>
                 <p>Цвет: {{ $item->color->name }}</p>
                 <p>Размер: {{ $item->size->name }}</p>
                 <p>Количество: {{ $item->quantity }} шт.</p>

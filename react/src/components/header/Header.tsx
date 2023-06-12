@@ -74,13 +74,13 @@ export const Header: React.FC<IProps> = ({ banner }) => {
                     <div className={styles.burgerNavbar}>
                         <ul>
                             <li>
+                                <Link className={styles.burgerLink} to={PATH_HOME}>Главная</Link>
+                            </li>
+                            <li>
                                 <Link className={styles.burgerLink} to={createCatalogPath("all")}>Каталог</Link>
                             </li>
                             <li>
-                                <Link className={styles.burgerLink} to={PATH_CATALOG}>Услуги</Link>
-                            </li>
-                            <li>
-                                <Link className={styles.burgerLink} to={PATH_CATALOG}>Контакты</Link>
+                                <Link className={styles.burgerLink} to={PATH_ABOUT}>О нас</Link>
                             </li>
                         </ul>
                     </div>

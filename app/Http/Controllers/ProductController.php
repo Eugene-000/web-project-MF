@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
@@ -11,21 +12,21 @@ class ProductController extends Controller
     {
         $products = Product::with(['category', 'colors', 'sizes'])->where('id', $product)->get();
 
-        return response()->json(['data' => $products]);
+        return response()->json(['data' => $products], Response::HTTP_OK, [], JSON_PRETTY_PRINT);
     }
 
     public function getProductsForIDCategory($category)
     {
         $products = Product::with(['category', 'colors', 'sizes'])->where('category_id', $category)->get();
 
-        return response()->json(['data' => $products]);
+        return response()->json(['data' => $products], Response::HTTP_OK, [], JSON_PRETTY_PRINT);
     }
 
     public function getAllProducts()
     {
         $products = Product::with(['category', 'colors', 'sizes'])->get();
 
-        return response()->json(['data' => $products]);
+        return response()->json(['data' => $products], Response::HTTP_OK, [], JSON_PRETTY_PRINT);
     }
 
     // public function newProducts()
@@ -72,7 +73,7 @@ class ProductController extends Controller
         return response()->json([
             'newItem' => $newItems,
             'popularItem' => $popularItems
-        ]);
+        ], Response::HTTP_OK, [], JSON_PRETTY_PRINT);
     }
 
     private function mapItemData($item)

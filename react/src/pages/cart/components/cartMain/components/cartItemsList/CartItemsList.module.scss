@@ -36,7 +36,7 @@
     }
 }
 
-@media screen and (min-width: 625px) {
+@media screen and (min-width: 644px) {
     .container {
         flex-direction: row;
         justify-content: space-between;
@@ -53,15 +53,20 @@
     }
 }
 
-@media screen and (min-width: 861px) {
+@media screen and (min-width: 1025px) {
     .container {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
         margin-bottom: 16px;
         .itemContainer {
             margin-bottom: 20px;
-            width: calc(33% - 10px);
+            margin-right: 20px;
+            width: calc(33% - 15px);
+        }
+
+        .itemContainer:nth-child(n+3) {
+            margin-right: 0;
         }
     
         .itemContainer:last-child {

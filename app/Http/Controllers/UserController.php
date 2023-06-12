@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
     public function getUserForID($user_id)
     {
         $user = User::findOrFail($user_id);
-        return response()->json($user);
+        return response()->json($user, Response::HTTP_OK, [], JSON_PRETTY_PRINT);
     }
 
     public function updateUserForId(Request $request, $id)

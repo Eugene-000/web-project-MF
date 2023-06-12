@@ -18,7 +18,7 @@ export const AboutHome: React.FC<IProps> = ({ isMainAbout = false }) => {
   }
 
   return (
-    <section className={styles.mainContainer}>
+    <section className={isMainAbout ? styles.mainContainer : [styles.mainContainer, styles.nonMainContainer].join(" ")}>
       <span className={styles.title}>О нас</span>
       <div className={styles.container}>
         <div className={styles.infoContainer}>
